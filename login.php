@@ -56,7 +56,7 @@
                                                 <div class="d-block">
                                                     <label for="password" class="control-label">Password</label>
                                                     <div class="float-right">
-                                                        <a href="auth-forgot-password.html" class="text-small">
+                                                        <a href="forgot-password.php" class="text-small">
                                                             Forgot Password?
                                                         </a>
                                                     </div>
@@ -121,7 +121,7 @@
 
                                 <div class="text-center mt-4 mb-3">
                                     <div class="text-job text-muted">
-                                        Don't have an account? <a href="auth-register.html">Create One</a>
+                                        Don't have an account? <a href="register.php">Create One</a>
                                     </div>
                                 </div>
                             </div>
@@ -156,7 +156,4 @@
     <script src="js/scripts.js"></script>
     <script src="js/custom.js"></script>
 </body>
-
-<!-- auth-login.html  Tue, 07 Jan 2020 03:39:47 GMT -->
-
 </html>

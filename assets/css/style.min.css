@@ -7,6 +7,10 @@
   box-shadow: none !important;
   outline: none;
 }
+
+/* Website Scroll */
+
+
 a {
   color: #007bff;
   transition: all 0.5s;
@@ -133,8 +137,8 @@ ol {
 .input-group-text:focus,
 .custom-select:focus,
 .custom-file-label:focus {
-  background: #ab95cb;
-  border-color: #6e4e9e;
+  background: #fcf3e6;
+  border-color: #9e894e;
 }
 .input-group-text,
 select.form-control:not([size]):not([multiple]),
