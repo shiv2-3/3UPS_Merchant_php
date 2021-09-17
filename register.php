@@ -15,6 +15,8 @@
     <!-- General CSS Files -->
     <link rel="stylesheet" href="assets/modules/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/modules/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
+
 
     <!-- CSS Libraries -->
     <link rel="stylesheet" href="assets/modules/jquery-selectric/selectric.css">
@@ -59,27 +61,36 @@
                                             <div class="invalid-feedback">
                                             </div>
                                         </div>
-
                                         <div class="form-group col-4">
                                             <label>Country</label>
                                             <select class="form-control selectric">
-                                                <option>India</option>
-                                                <option>USA</option>
-                                                <option>Japan</option>
-                                                <option>Malaysia</option>
-                                                <option>Thailand</option>
+                                                <option selected disabled>Select Contry</option>
+                                                <option value="">India</option>
+                                                <option value="">USA</option>
+                                                <option value="">Japan</option>
+                                                <option value="">Malaysia</option>
+                                                <option value="">Thailand</option>
                                             </select>
                                         </div>
                                         <div class="form-group col-4">
                                             <label>State</label>
                                             <select class="form-control selectric">
-                                                <option>Maharashtra</option>
-                                                <option>Rajasthan</option>
+                                                <option selected disabled>Select State</option>
+                                                <option value="">Maharashtra</option>
+                                                <option value="">Karnataka</option>
+                                                <option value="">Delhi</option>
                                             </select>
                                         </div>
                                         <div class="form-group col-4">
                                             <label>City</label>
-                                            <input type="text" class="form-control">
+                                            <select class="form-control selectric">
+                                                <option selected disabled>Select City</option>
+                                                <option value="">Pune</option>
+                                                <option value="">Mumbai</option>
+                                                <option value="">Karad</option>
+                                                <option value="">Bangalore</option>
+                                                <option value="">Delhi</option>
+                                            </select>
                                         </div>
                                         <div class="form-group col-4">
                                             <label>Postal Code</label>
@@ -87,7 +98,13 @@
                                         </div>
                                         <div class="form-group col-4">
                                             <label>Nearby Airport</label>
-                                            <input type="text" class="form-control">
+                                            <select class="form-control selectric">
+                                                <option selected disabled>Select Airport</option>
+                                                <option value="Food and Beverage">Pune International Airport</option>
+                                                <option value="Fashion and Lifestyle">Chhatrapati Shivaji International Airport</option>
+                                                <option value="Grocery">Karad Airport</option>
+                                                <option value="Caterers">Solapur Airport </option>
+                                            </select>
                                         </div>
                                         <div class="form-group col-4">
                                             <label>Business Address</label>
@@ -152,31 +169,31 @@
                                             <input type="file" class="form-control">
                                         </div>
                                         <div class="form-group col-4">
-                                        <label>Opening Time</label>
-                                        <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text">
-                                            <i class="fas fa-clock"></i>
+                                            <label>Opening Time</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">
+                                                        <i class="fas fa-clock"></i>
+                                                    </div>
+                                                </div>
+                                                <input type="text" class="form-control timepicker">
                                             </div>
                                         </div>
-                                        <input type="text" class="form-control timepicker">
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-4">
-                                        <label>Closing Time</label>
-                                        <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text">
-                                            <i class="fas fa-clock"></i>
+                                        <div class="form-group col-4">
+                                            <label>Closing Time</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">
+                                                        <i class="fas fa-clock"></i>
+                                                    </div>
+                                                </div>
+                                                <input type="text" class="form-control timepicker">
                                             </div>
                                         </div>
-                                        <input type="text" class="form-control timepicker">
+                                        <div class="form-group col-4">
+                                            <label>Business Description</label>
+                                            <textarea class="form-control"></textarea>
                                         </div>
-                                    </div>
-                                    <div class="form-group col-4">
-                                        <label>Business Description</label>
-                                        <textarea class="form-control"></textarea>
-                                    </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox">
@@ -203,6 +220,8 @@
     <!-- JS Libraies -->
     <script src="assets/modules/jquery-pwstrength/jquery.pwstrength.min.js"></script>
     <script src="assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
+    <script src="assets/modules/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+
 
     <!-- Page Specific JS File -->
     <script src="js/page/auth-register.js"></script>
