@@ -1,3 +1,9 @@
+<?
+session_start();
+if (isset($_SESSION['merchant_id'])) {
+    header("Location: ./index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,6 +28,11 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="assets/css/style.min.css">
     <link rel="stylesheet" href="assets/css/components.min.css">
+    <link rel="stylesheet" href="./assets/modules/jquery-ui">
+    <link rel="stylesheet" href="./assets/modules/jquery-pwstrength">
+    <link rel="stylesheet" href="./assets/modules/jquery.sparkline.min.js">
+    <!-- alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body class="layout-4">
@@ -37,14 +48,14 @@
                         <div class="card card-primary">
                             <div class="card-header">
                                 <ul class="nav nav-pills" id="myTab3" role="tablist">
-                                    <li class="nav-item"><a class="nav-link active" id="home-tab3" data-toggle="tab" href="#home3" role="tab" aria-controls="home" aria-selected="true">Login With Password</a></li>
-                                    <li class="nav-item"><a class="nav-link" id="profile-tab3" data-toggle="tab" href="#profile3" role="tab" aria-controls="profile" aria-selected="false">Login With OTP</a></li>
+                                    <li class="nav-item"><a class="nav-link active" id="profile-tab3" data-toggle="tab" href="#profile3" role="tab" aria-controls="profile" aria-selected="false">Login With OTP</a></li>
+                                    <li class="nav-item"><a class="nav-link" id="home-tab3" data-toggle="tab" href="#home3" role="tab" aria-controls="home" aria-selected="true">Login With Password</a></li>
                                 </ul>
                             </div>
                             <div class="card-body">
                                 <div class="tab-content" id="myTabContent2">
-                                    <div class="tab-pane fade show active" id="home3" role="tabpanel" aria-labelledby="home-tab3">
-                                        <form method="POST" action="#" class="needs-validation" novalidate="">
+                                    <div class="tab-pane fade " id="home3" role="tabpanel" aria-labelledby="home-tab3">
+                                        <form method="POST" class="needs-validation" novalidate="" id="login">
                                             <div class="form-group">
                                                 <label for="email">Email</label>
                                                 <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
@@ -81,16 +92,15 @@
                                             </div>
                                         </form>
                                     </div>
-                                    <div class="tab-pane fade" id="profile3" role="tabpanel" aria-labelledby="profile-tab3">
+                                    <div class="tab-pane fade show active" id="profile3" role="tabpanel" aria-labelledby="profile-tab3">
                                         <form method="POST" action="#" class="needs-validation" novalidate="">
                                             <div class="form-group">
                                                 <label for="email">Email / Phone No</label>
                                                 <div class="input-group">
-                                                <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
-                                                    <div class="input-group-prepend">
-                                                        <div class="input-group-text btn">
-                                                            Send OTP
-                                                        </div>
+                                                <input id="user_input" type="email" class="form-control" name="email" tabindex="1" required autofocus placeholder="Enter Email or Phone">
+                                                    <div  class="input-group-prepend">
+                                                        <button type="button" onclick="getOTP()" class="input-group-text btn btn-outline-primary">
+                                                            Send OTP</button>
                                                     </div>
                                                 </div>
                                                 <div class="invalid-feedback">
@@ -102,14 +112,14 @@
                                                     <label for="password" class="control-label">OTP</label>
                                                 </div>
                                                 <div class="input-group">
-                                                    <input id="otp" type="text" class="form-control phone-number" name="password" minlength="6" maxlength="6" pattern="[0-9]{6}" tabindex="2" required>
+                                                    <input id="otp" type="text" class="form-control phone-number" name="password" minlength="6" maxlength="6" pattern="[0-9]{6}" tabindex="2" required placeholder="Enter OTP">
                                                     <div class="invalid-feedback">
                                                         Please Enter Valid OTP
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
+                                                <button type="button" onclick="LoginOTP()" class="btn btn-primary btn-lg btn-block" tabindex="4">
                                                     Login
                                                 </button>
                                             </div>
@@ -148,10 +158,132 @@
     <script src="js/CodiePie.js"></script>
 
     <!-- JS Libraies -->
-
+    
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 
     <!-- Page Specific JS File -->
+    <script>
 
+        // verify and login with otp
+
+        function LoginOTP() {
+        var user_otp = jQuery('#otp').val();
+        var request = true;
+        var is_error = "";
+        if (user_res == "") {
+            swal({
+          title: "Please enter valid details",
+          icon: "warning",
+        });
+        // alert("enter data")
+    } else {
+        const verify_otp=true;
+        jQuery.ajax({
+            url: './backend/script.php',
+            type: 'POST',
+            data: 'user_otp=' + user_otp + '&verify_otp='+verify_otp,
+          success: function(result) {
+              
+            //   alert(result)
+              if(result === "true"){
+                swal({
+                    title: "OTP has been sent to "+user_res,
+                    icon: "success",
+            })
+              }
+              else {
+                swal({
+                    title: "Invalid datails",
+                    icon: "warning",
+            })
+              }  
+              
+        }
+        
+    });
+}
+}
+
+
+        // get OTP
+
+    function getOTP() {
+        var user_res = jQuery('#user_input').val();
+        var request = true;
+        var is_error = "";
+        if (user_res == "") {
+            swal({
+          title: "Please enter valid details",
+          icon: "warning",
+        });
+        // alert("enter data")
+    } else {
+        const otp=true;
+        jQuery.ajax({
+            url: './backend/script.php',
+            type: 'POST',
+            data: 'user=' + user_res + '&type_otp='+otp,
+          success: function(result) {
+              
+            //   alert(result)
+              if(result === "true"){
+                swal({
+                    title: "OTP has been sent to "+user_res,
+                    icon: "success",
+            })
+              }
+              else {
+                swal({
+                    title: "Invalid datails",
+                    icon: "warning",
+            })
+              }  
+              
+        }
+        
+    });
+}
+}
+
+
+// Login with password
+        
+$('#login').on('submit', function(e) {
+  const data = "";
+      e.preventDefault();
+    
+      // loader();
+      $.ajax({
+        url: './backend/script.php',
+        type: 'POST',
+        // dataType: 'json',
+        data: {
+          type: "login",
+          mail: $('#email').val(),
+          pass: $('#myPassword').val()
+        },
+        success: function(data) {
+          console.log(data);
+            swal({
+              title: "Login successfull",
+              icon: "success",
+            }).then(function() {
+              window.location.href = "./index.php";
+            });
+      },
+      
+      error: function(response) {
+        console.log("Error")
+        console.log(response);
+        }
+      });
+
+      return false;
+
+    });
+    </script>
     <!-- Template JS File -->
+    <!-- <script src="./js/connections/login.js"></script> -->
     <script src="js/scripts.js"></script>
     <script src="js/custom.js"></script>
 </body>
