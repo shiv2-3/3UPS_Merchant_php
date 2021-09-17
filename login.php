@@ -101,7 +101,6 @@
                                                 <div class="d-block">
                                                     <label for="password" class="control-label">OTP</label>
                                                 </div>
-
                                                 <div class="input-group">
                                                     <input id="otp" type="text" class="form-control phone-number" name="password" minlength="6" maxlength="6" pattern="[0-9]{6}" tabindex="2" required>
                                                     <div class="invalid-feedback">
