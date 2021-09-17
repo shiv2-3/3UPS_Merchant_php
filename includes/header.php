@@ -1,4 +1,61 @@
 
+<?php 
+// include 'db.php';
+session_start();
+if (!isset($_SESSION['merchant_id'])) {
+    header("Location: ./login.php");
+}
+
+$id = $_SESSION['merchant_id'];
+$token = $_SESSION['token'];
+$ch = curl_init();
+
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+// $header = array(
+//   'Accept: application/json',
+//   'Content-Type: application/x-www-form-urlencoded',
+//   'Authorization1:'.$token
+// );
+
+// $response=curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+
+//   $data = json_decode($response, true);
+//   print_r($data);
+
+
+
+
+
+  
+$url = "https://3-upstesting.site/delta_api/index.php/web/Login/get_merchant";
+
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+$headers = array(
+   "Accept: application/json",
+   "Authorization1:".$token
+);
+
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers); //for debug only!
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+$resp = curl_exec($curl);
+$resp = json_decode($resp);
+curl_close($curl);
+// print_r($resp);
+$merchant_data = array();
+$merchant_data = $resp->data[0];
+// print_r($merchant_data);
+// print_r($res->data[0]);
+
+// echo "<script>alert($merchant_data->merchant_id)</script>"
+  
+?>
+
 <!-- fontawesome -->
 <script src="https://kit.fontawesome.com/41d6de745e.js" crossorigin="anonymous"></script>
 
@@ -91,14 +148,14 @@
                 <li class="dropdown">
                     <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                     <img alt="image" src="assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-                    <div class="d-sm-none d-lg-inline-block">Hi, Michelle Green</div></a>
+                    <div class="d-sm-none d-lg-inline-block">Hi, <?php echo $merchant_data->merchant_name ?></div></a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="dropdown-title">Logged in 5 min ago</div>
                         <a href="features-profile.html" class="dropdown-item has-icon"><i class="far fa-user"></i> Profile</a>
                         <a href="features-activities.html" class="dropdown-item has-icon"><i class="fas fa-bolt"></i> Activities</a>
                         <a href="features-settings.html" class="dropdown-item has-icon"><i class="fas fa-cog"></i> Settings</a>
                         <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item has-icon text-danger"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        <a href="./backend/script.php?type=logout" class="dropdown-item has-icon text-danger"><i class="fas fa-sign-out-alt"></i> Logout</a>
                     </div>
                 </li>
             </ul>
