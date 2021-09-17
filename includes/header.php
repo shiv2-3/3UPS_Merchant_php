@@ -91,7 +91,7 @@
                 <li class="dropdown">
                     <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                     <img alt="image" src="assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-                    <div class="d-sm-none d-lg-inline-block">Hi, Michelle Green</div></a>
+                    <div class="d-sm-none d-lg-inline-block">Hi, Merchant</div></a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="dropdown-title">Logged In</div>
                         <a href="profile.php" class="dropdown-item has-icon"><i class="far fa-user"></i> Profile</a>
@@ -114,7 +114,7 @@
                 <ul class="sidebar-menu">
                     <li class="menu-header">Dashboard</li>
                     <li class="dropdown active"><a href="index.php" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a></li>
-                    <li class="menu-header">Starter</li>
+                    <!-- <li class="menu-header">Starter</li>
                     <li class="dropdown">
                         <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a>
                         <ul class="dropdown-menu">
@@ -139,69 +139,7 @@
                             <li><a class="nav-link" href="bootstrap-tooltip.html">Tooltip</a></li>
                             <li><a class="nav-link" href="bootstrap-typography.html">Typography</a></li>
                         </ul>
-                    </li>
-                    <li class="menu-header">CodiePie</li>
-                    <li class="dropdown">
-                        <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i> <span>Components</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="components-article.html">Article</a></li>
-                            <li><a class="nav-link beep beep-sidebar" href="components-avatar.html">Avatar</a></li>
-                            <li><a class="nav-link" href="components-chat-box.html">Chat Box</a></li>
-                            <li><a class="nav-link beep beep-sidebar" href="components-empty-state.html">Empty State</a></li>
-                            <li><a class="nav-link" href="components-gallery.html">Gallery</a></li>
-                            <li><a class="nav-link beep beep-sidebar" href="components-hero.html">Hero</a></li>
-                            <li><a class="nav-link" href="components-multiple-upload.html">Multiple Upload</a></li>
-                            <li><a class="nav-link beep beep-sidebar" href="components-pricing.html">Pricing</a></li>
-                            <li><a class="nav-link" href="components-statistic.html">Statistic</a></li>
-                            <li><a class="nav-link" href="components-tab.html">Tab</a></li>
-                            <li><a class="nav-link" href="components-table.html">Table</a></li>
-                            <li><a class="nav-link" href="components-user.html">User</a></li>
-                            <li><a class="nav-link beep beep-sidebar" href="components-wizard.html">Wizard</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Forms</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="forms-advanced-form.html">Advanced Form</a></li>
-                            <li><a class="nav-link" href="forms-editor.html">Editor</a></li>
-                            <li><a class="nav-link" href="forms-validation.html">Validation</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="nav-link has-dropdown"><i class="fas fa-plug"></i> <span>Modules</span></a>
-                        <ul class="dropdown-menu">
-                            <li class="menu-sub-header">Tables</li>
-                            <li><a class="nav-link" href="modules-datatables.html">DataTables</a></li>
-                            <li><a class="nav-link" href="modules-table-more.html">More</a></li>
-                            <li class="menu-sub-header">Other</li>
-                            <li><a class="nav-link" href="modules-owl-carousel.html">Owl Carousel</a></li>
-                            <li><a class="nav-link" href="modules-sweet-alert.html">Sweet Alert</a></li>
-                            <li><a class="nav-link" href="modules-toastr.html">Toastr</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-header">Pages</li>
-                    <li class="dropdown">
-                        <a href="#" class="nav-link has-dropdown"><i class="far fa-user"></i> <span>Auth</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="forgot-password.php">Forgot Password</a></li> 
-                            <li><a href="login.php">Login</a></li> 
-                            <li><a href="auth-register.html">Register</a></li> 
-                            <li><a href="auth-reset-password.html">Reset Password</a></li> 
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="nav-link has-dropdown"><i class="fas fa-bicycle"></i> <span>Features</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="features-activities.html">Activities</a></li>
-                            <li><a class="nav-link" href="features-post-create.html">Post Create</a></li>
-                            <li><a class="nav-link" href="features-posts.html">Posts</a></li>
-                            <li><a class="nav-link" href="features-profile.html">Profile</a></li>
-                            <li><a class="nav-link" href="features-settings.html">Settings</a></li>
-                            <li><a class="nav-link" href="features-setting-detail.html">Setting Detail</a></li>
-                            <li><a class="nav-link" href="features-tickets.html">Tickets</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="nav-link" href="utilities-invoice.html"><i class="fas fa-pencil-ruler"></i> <span>Invoice</span></a></li>
-                </ul>
+                    </li> -->
+                    </ul>
             </aside>
         </div>
