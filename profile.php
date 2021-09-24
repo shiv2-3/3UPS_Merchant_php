@@ -72,7 +72,7 @@
                                                 <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                                        Edit
+                                                        Verify
                                                     </div>
                                                 </div>
                                             </div>
